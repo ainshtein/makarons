@@ -1,0 +1,56 @@
+.btn {
+  @include inlineblock;
+  @include color($WHITE, $red);
+  @include opensans(bold);
+
+  padding: 23px 34px 17px;
+
+  cursor: pointer;
+  transition: background-color .3s, color .3s;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 6.5px 11.3px 18.8px 1.2px rgba(0, 0, 0, 0.24);
+
+  //border: 3px solid $WHITE;
+  border-radius: 27px;
+  outline: none;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  &:hover {
+    @include color($green, $WHITE);
+  }
+
+  &:active {
+    @include color($green, rgba($WHITE, .3));
+  }
+}
+
+.slider .btn {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.btn--submit {
+  @include color($red, $WHITE);
+
+  padding: 20px 36px 19px;
+
+  &:hover {
+    @include color($WHITE, $red);
+  }
+
+  &:active {
+    @include color($WHITE, rgba($red, .3));
+  }
+}
+
+
+.btn--block {
+  width: 100%;
+}
