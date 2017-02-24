@@ -1,5 +1,10 @@
 .footer-main {
   background-color: $green;
+  width: 100%;
+  height: $footer-height;
+  margin-top: -$footer-height;
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-main__wrapper {

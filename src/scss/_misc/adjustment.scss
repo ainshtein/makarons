@@ -1,6 +1,6 @@
 // ----- Adjustment variables ----- //
 $container-width: 900px;
-
+$footer-height: 182px;
 
 /* ----- Adjustment styles ----- */
 html, body {
@@ -22,6 +22,20 @@ body {
   @include opensans;
   font-style: normal;
   background-color: $WHITE;
+}
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+/*--Изменяем ширину как у viewport либо по контенту--*/
+  min-width: $container-width + 20px;
+}
+
+.wrapper:after {
+  content: " ";
+  display: block;
+  height: $footer-height;
+  overflow: hidden;
 }
 .content-wrapper {
   width: $container-width;

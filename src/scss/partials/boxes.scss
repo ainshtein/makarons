@@ -1,0 +1,167 @@
+.boxes {
+  background: $pink url('../../img/bg-boxes.jpg') 50% 50% no-repeat;
+  color: white;
+}
+
+.boxes__wrapper {
+  width: 945px;
+  margin: 0 auto;
+  padding: 43px 0;
+}
+
+.boxes__title {
+  @include opensans(bold);
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.boxes__row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &--small {
+    width: 920px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+
+.boxes__item {
+  position: relative;
+  width: 271px;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background-color: $WHITE;
+
+  &:before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0px 15px 10px;
+    border-color: transparent transparent transparent $WHITE;
+    content: '';
+    position: absolute;
+  }
+}
+
+//========= ARROWS START==============//
+.boxes__item--first {
+
+  &:before {
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 10px 15px 0px;
+  border-color: transparent $pink transparent transparent;
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+    &:before {
+    content: '';
+    width: 20px;
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: -7px;
+    border-top: 1px dashed $WHITE;
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    content: '';
+    width: 20px;
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: -8px;
+    border-top: 1px dashed $WHITE;
+    transform: rotate(45deg);
+  }
+}
+
+.boxes__item--second {
+
+  &:before {
+    display: none;
+  }
+ }
+
+.boxes__item--third {
+
+  &:before {
+    display: none;
+  }
+}
+
+.triangle--reflection {
+  border-width: 15px 0px 15px 10px;
+  border-color: transparent transparent transparent $pink;
+  left: auto;
+  right: -10px;
+
+  &:before {
+    left: auto;
+    right: -7px;
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    left: auto;
+    right: -8px;
+    transform: rotate(-45deg);
+  }
+
+}
+
+.boxes__item--fourth {
+
+  &:before {
+    left: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 15px 10px 15px 0px;
+    border-color: transparent $WHITE transparent transparent;
+  }
+}
+
+//========= ARROWS END==============//
+
+.boxes__text {
+  @include opensans;
+  color: #982a5e;
+  font-size: 16px;
+}
+
+.boxes__item--dashed {
+  background-color: $pink;
+  border: 1px dashed white;
+}
+
+.boxes__item--dashed .boxes__text {
+  color: $WHITE;
+}
+
+.boxes__toggle {
+  display: block;
+  width: 34px;
+  height: 34px;
+  background: transparent url('../../img/arrow.png') 50% 50% no-repeat;
+  margin: 0 auto;
+  font-size: 0;
+  cursor: pointer;
+}

@@ -5,6 +5,7 @@ $BLACK: #000000;
 // ----- Variables ----- //
 $green: #40c1c2;
 $red: #cc387e;
+$pink: #e94090;
 
 // $base: #f1f5f7;
 // $red:  #ee3643;
@@ -33,3 +34,6 @@ $red: #cc387e;
 @import "partials/footer";
 @import "partials/btn";
 @import "partials/order-form";
+@import "partials/features";
+@import "partials/boxes";
+@import "partials/partnership";
