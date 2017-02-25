@@ -26,14 +26,17 @@
 
   @include tablet {
     display: block;
-    max-width: 480px;
-    width: 100%;
-    justify-content: space-between;
-    padding: 15px 0 0;
+    width: 480px;
+    margin: 0 auto;
+    // width: 100%;
+    // justify-content: space-between;
+    // padding: 15px 0 0;
   }
 
   @include phone {
     width: 320px;
+    margin: 0 auto;
+    padding: 14px 15px 12px;
   }
 
 }
@@ -52,12 +55,21 @@
   @include tablet {
     width: 100%;
     // box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    padding: 0 0 15px 15px;
+    // padding: 0 0 15px 15px;
+  }
+
+  @include phone {
+    width: 50%;
+    font-size: 0;
   }
 }
 
+.header-main .logo img {
+  max-width: 100%;
+  height: auto;
+}
 .header-main .logo--nav-opened {
-  box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, .15);
+  // box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, .15);
 }
 
 .nav-main {
@@ -76,8 +88,12 @@
 .nav-main__toggle {
   @include tablet {
     display: block;
-    top: -57px;
-    right: 25%;
+    top: -43px;
+    right: 0;
+  }
+
+  @include phone {
+    top: -30px;
   }
 
   position: absolute;
@@ -294,8 +310,6 @@
 
 //======= START GAMBURGER ======//
 .nav-main--closed .nav-main__list {
-  display: none;
-
   @include desktop {
     display: flex;
   }

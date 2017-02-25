@@ -3,11 +3,28 @@
 }
 
 .order-form__wrapper {
-  width: 810px;
+  max-width: 810px;
   padding: 37px 0 26px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+
+  @include laptop {
+    width: 750px;
+  }
+
+  @include tablet {
+    width: 480px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @include phone {
+    width: 320px;
+    margin: 0 auto;
+  }
+
 }
 
 .order-form__item-wrapper {
@@ -16,16 +33,38 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 26px;
+
+  @include phone {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .order-form__item {
   position: relative;
+
+  @include phone {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  &:last-child {
+    @include tablet {
+      margin: auto;
+      margin-top: 30px;
+    }
+    @include phone {
+      margin-top: 0;
+    }
+  }
+
 }
 
 .order-form__input {
   @include color;
   @include opensans;
   width: 225px;
+  height: 47px;
   padding: 12px 50px 15px 30px;
   outline: none;
   border-radius: 23px;
@@ -44,6 +83,10 @@
 
   &:focus {
     border-color: $red;
+  }
+
+  @include phone {
+    width: 100%;
   }
 }
 
