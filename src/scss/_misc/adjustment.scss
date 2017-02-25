@@ -1,6 +1,6 @@
 // ----- Adjustment variables ----- //
 $container-width: 900px;
-$footer-height: 182px;
+//$footer-height: 182px;
 
 /* ----- Adjustment styles ----- */
 html, body {
@@ -12,7 +12,26 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+
+  font-size: 16px;
+
+  @include desktop {
+    font-size: 16px;
+  }
+
+  @include laptop {
+    font-size: 15px;
+  }
+
+  @include tablet {
+    font-size: 14px;
+  }
+
+  @include phone {
+    font-size: 12px;
+  }
 }
+
 body {
   min-width: $container-width;
   font-size: 16px;
@@ -22,30 +41,70 @@ body {
   @include opensans;
   font-style: normal;
   background-color: $WHITE;
+
+  @include desktop {
+    background: black;
+  }
+
+  @include laptop {
+    background: red;
+  }
+
+  @include tablet {
+    background: green;
+  }
+
+  @include phone {
+    background: yellow;
+  }
 }
+
 .wrapper {
   min-height: 100%;
   overflow: hidden;
   position: relative;
 /*--Изменяем ширину как у viewport либо по контенту--*/
-  min-width: $container-width + 20px;
+  // min-width: $container-width + 20px;
 }
 
 .wrapper:after {
   content: " ";
   display: block;
-  height: $footer-height;
+  height: 182px;
   overflow: hidden;
+
+  @include laptop {
+    height: 222px;
+  }
 }
+
 .content-wrapper {
   width: $container-width;
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .container {
-  width: $container-width;
+  // width: $container-width;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
+
+  @include desktop {
+    width: 970px;
+  }
+
+  @include laptop {
+    width: 750px;
+  }
+
+  @include tablet {
+    width: 480px;
+  }
+
+  @include phone {
+    width: 280px;
+  }
+
 }
 
 // on screen - hidden, in accessibility tree - visible

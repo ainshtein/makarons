@@ -4,44 +4,264 @@
 }
 
 .header-main__wrapper {
+  // position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 1005px;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1035px;
+  min-width: 280px;
   margin: 0 auto;
-  padding: 28px 0 24px;
+  padding: 28px 15px 24px;
+
+   @include desktop {
+    width: 970px;
+  }
+
+  @include laptop {
+    width: 750px;
+    justify-content: center;
+}
+
+  @include tablet {
+    display: block;
+    max-width: 480px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 0 0;
+  }
+
+  @include phone {
+    width: 320px;
+  }
+
 }
 
 .logo {
   width: 225px;
   margin-right: 100px;
+
+  @include desktop {
+    margin-right: 50px;
+  }
+}
+
+.header-main .logo {
+
+  @include tablet {
+    width: 100%;
+    // box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    padding: 0 0 15px 15px;
+  }
+}
+
+.header-main .logo--nav-opened {
+  box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, .15);
 }
 
 .nav-main {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+
+  @include tablet {
+    display: block;
+  }
 }
 
+//============= Start Burger ============//
 .nav-main__toggle {
+  @include tablet {
+    display: block;
+    top: -57px;
+    right: 25%;
+  }
+
+  position: absolute;
+  z-index: 2;
+
+  display: none;
+
+  width: 50px;
+  height: 24px;
+  padding: 0;
+
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+  background: none;
+  background-color: transparent;
+
+  font-size: 0;
+
+  &:active {
+    outline: none;
+  }
+}
+
+// .nav-main__toggle .cross path {
+//   display: none;
+// }
+
+// .nav-main__toggle .cross path {
+//   display: none;
+// }
+
+.nav-main--closed .nav-main__toggle .burger path {
+  display: block;
+  fill: $green;
+}
+
+.nav-main--closed .nav-main__toggle .cross {
+  display: none;
+}
+// .nav-main--closed .nav-main__toggle::before {
+//   // @include desktop {
+//   //   display: block;
+//   // }
+
+//   position: absolute;
+//   top: 0;
+
+//   display: block;
+
+//   width: 50px;
+//   height: 4px;
+
+//   content: "";
+
+//   background-color: $green;
+//   box-shadow: 0 10px 0 0 $green,
+//   0 20px 0 0 $green;
+// }
+
+// .nav-main--closed .nav-main__toggle:hover::before {
+//   background-color: $red;
+//   box-shadow: 0 10px 0 0 $red,
+//   0 20px 0 0 $red;
+// }
+
+.nav-main--closed .nav-main__toggle:hover .burger path {
+  display: block;
+  fill: $red;
+}
+
+.nav-main--closed .nav-main__toggle:active .burger path {
+  display: block;
+  fill: rgba($red, .3);
+}
+
+// .nav-main--closed .nav-main__toggle:active::before {
+//   outline: none;
+//   background-color: rgba($red, .3);
+//   box-shadow: 0 10px 0 0 rgba($red, .3),
+//   0 20px 0 0 rgba($red, .3);
+// }
+
+// .nav-main--opened .nav-main__toggle {
+//   // @include tablet {
+//   //   top: -50px;
+//   // }
+//   // @include desktop {
+//   //   display: none;
+//   // }
+
+//   // top: -35px;
+
+//   &::before,
+//   &::after {
+//     @include tablet {
+//       //left: 42px;
+//     }
+
+//     position: absolute;
+//     //top: -4px;
+//     //left: 25px;
+
+//     display: block;
+
+//     width: 28px;
+//     height: 4px;
+
+//     content: "";
+
+//     background-color: $green;
+//   }
+
+//   &::before {
+//     transform: rotate(45deg);
+
+//     box-shadow: none;
+//   }
+
+//   &::after {
+//     transform: rotate(-45deg);
+//   }
+
+//   &:hover::before,
+//   &:hover::after {
+//     background-color: $red;
+//   }
+
+//   &:active::before,
+//   &:active::after {
+//     background-color: rgba($red, .3);
+//   }
+// }
+
+.nav-main--opened .nav-main__toggle .cross path {
+  display: block;
+  fill: $green;
+}
+
+.nav-main--opened .nav-main__toggle .burger {
   display: none;
 }
 
+.nav-main--opened .nav-main__toggle:hover .cross path {
+  display: block;
+  fill: $red;
+}
+
+.nav-main--opened .nav-main__toggle:active .cross path {
+  display: block;
+  fill: rgba($red, .3);
+}
+//============== End Gabburger ==========//
+
 .nav-main__list {
-  width: 380px;
+  max-width: 380px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
   list-style: none;
-  margin-right: 8px;
+  margin-right: 20px;
+
+  @include tablet {
+    display: block;
+    max-width: 100%;
+    margin-right: 0;
+  }
 
 }
 
 .nav-main__item {
   margin-right: 50px;
+
+  @include desktop {
+    margin-right: 30px;
+  }
+
+  @include tablet {
+    display: block;
+    margin-right: 0;
+  }
 }
 
 .nav-main__item--active {
@@ -61,11 +281,65 @@
     color: $green;
     cursor: pointer;
   }
+
+  @include tablet {
+    text-align: center;
+    margin-bottom: 1px;
+    padding: 14px 0 17px;
+    box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
 
+//======= START GAMBURGER ======//
+.nav-main--closed .nav-main__list {
+  display: none;
+
+  @include desktop {
+    display: flex;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+}
+
+.nav-main--nojs .nav-main__toggle {
+  display: none;
+}
+
+.nav-main--nojs .nav-main__list {
+  display: block;
+}
+
+
+//======= END GAMBURGER ======//
 .phone {
-  width: 180px;
-  margin-right: 30px;
+  max-width: 180px;
+  margin-right: 40px;
+
+  @include desktop {
+    margin-right: 20px;
+  }
+}
+
+.header-main .phone {
+  @include laptop {
+    margin-left: auto;
+    margin-top: 20px;
+  }
+
+  @include tablet {
+    display: none;
+    margin: 0 auto;
+    max-width: 220px;
+  }
+}
+
+.header-main .phone--nav-opened {
+  display: block;
 }
 
 .phone__link {
@@ -103,10 +377,41 @@
   }
 }
 
+.header-main .phone__link {
+  @include tablet {
+    padding-left: 32px;
+    padding-top: 14px;
+    padding-bottom: 17px;
+    font-size: 18px;
+    line-height: 32px;
+
+    &:before {
+      top: 21px;
+    }
+  }
+
+}
+
 .socials {
   display: flex;
-  width: 80px;
+  max-width: 80px;
   font-size: 0;
+}
+
+.header-main .socials {
+  @include laptop {
+    margin-right: 55px;
+  }
+
+  @include laptop {
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
+  @include tablet {
+    margin: 0 auto;
+    display: none;
+  }
 }
 
 .social-link {
@@ -117,12 +422,17 @@
   text-decoration: none;
   margin-right: 20px;
   transition: all .3s;
+  font-size: 0;
 
   &:before {
     content: " ";
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  @include desktop {
+    margin-right: 10px;
   }
 }
 
@@ -158,6 +468,7 @@
   }
 }
 
+
 .slider {
   height: 537px;
 }
@@ -171,6 +482,7 @@
 }
 .slider__item--first {
   background: #fafafa url('../../img/slider-1.jpg') 0 0 no-repeat;
+  //background-size: 100%;
 }
 
 .owl-buttons {
