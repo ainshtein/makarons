@@ -1,65 +1,58 @@
 .header-main__top {
   background-color: #fafafa;
-  box-shadow: 1.5px 2.6px 4.7px 0.3px rgba(0, 0, 0, 0.24);
+  box-shadow: 1.5px 2.6px 4.7px .3px rgba(0, 0, 0, .24);
 }
 
 .header-main__wrapper {
-  // position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  max-width: 1035px;
-  min-width: 280px;
-  margin: 0 auto;
-  padding: 28px 15px 24px;
-
-   @include desktop {
+  @include desktop {
     width: 970px;
   }
-
   @include laptop {
     width: 750px;
-    justify-content: center;
-}
 
+    justify-content: center;
+  }
   @include tablet {
     display: block;
+
     width: 480px;
     margin: 0 auto;
-    // width: 100%;
-    // justify-content: space-between;
-    // padding: 15px 0 0;
   }
-
   @include phone {
     width: 320px;
     margin: 0 auto;
     padding: 14px 15px 12px;
   }
 
+  display: flex;
+  flex-direction: row;
+
+  min-width: 280px;
+  max-width: 1035px;
+  margin: 0 auto;
+  padding: 28px 15px 24px;
+
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .logo {
-  width: 225px;
-  margin-right: 100px;
-
   @include desktop {
     margin-right: 50px;
   }
+
+  width: 225px;
+  margin-right: 100px;
 }
 
 .header-main .logo {
-
   @include tablet {
     width: 100%;
-    // box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    // padding: 0 0 15px 15px;
   }
-
   @include phone {
     width: 50%;
+
     font-size: 0;
   }
 }
@@ -68,30 +61,29 @@
   max-width: 100%;
   height: auto;
 }
-.header-main .logo--nav-opened {
-  // box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, .15);
-}
 
 .nav-main {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-
   @include tablet {
     display: block;
   }
+
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 //============= Start Burger ============//
 .nav-main__toggle {
   @include tablet {
-    display: block;
     top: -43px;
     right: 0;
-  }
 
+    display: block;
+  }
   @include phone {
     top: -30px;
   }
@@ -119,118 +111,31 @@
   }
 }
 
-// .nav-main__toggle .cross path {
-//   display: none;
-// }
-
-// .nav-main__toggle .cross path {
-//   display: none;
-// }
-
 .nav-main--closed .nav-main__toggle .burger path {
   display: block;
+
   fill: $green;
 }
 
 .nav-main--closed .nav-main__toggle .cross {
   display: none;
 }
-// .nav-main--closed .nav-main__toggle::before {
-//   // @include desktop {
-//   //   display: block;
-//   // }
-
-//   position: absolute;
-//   top: 0;
-
-//   display: block;
-
-//   width: 50px;
-//   height: 4px;
-
-//   content: "";
-
-//   background-color: $green;
-//   box-shadow: 0 10px 0 0 $green,
-//   0 20px 0 0 $green;
-// }
-
-// .nav-main--closed .nav-main__toggle:hover::before {
-//   background-color: $red;
-//   box-shadow: 0 10px 0 0 $red,
-//   0 20px 0 0 $red;
-// }
 
 .nav-main--closed .nav-main__toggle:hover .burger path {
   display: block;
+
   fill: $red;
 }
 
 .nav-main--closed .nav-main__toggle:active .burger path {
   display: block;
+
   fill: rgba($red, .3);
 }
 
-// .nav-main--closed .nav-main__toggle:active::before {
-//   outline: none;
-//   background-color: rgba($red, .3);
-//   box-shadow: 0 10px 0 0 rgba($red, .3),
-//   0 20px 0 0 rgba($red, .3);
-// }
-
-// .nav-main--opened .nav-main__toggle {
-//   // @include tablet {
-//   //   top: -50px;
-//   // }
-//   // @include desktop {
-//   //   display: none;
-//   // }
-
-//   // top: -35px;
-
-//   &::before,
-//   &::after {
-//     @include tablet {
-//       //left: 42px;
-//     }
-
-//     position: absolute;
-//     //top: -4px;
-//     //left: 25px;
-
-//     display: block;
-
-//     width: 28px;
-//     height: 4px;
-
-//     content: "";
-
-//     background-color: $green;
-//   }
-
-//   &::before {
-//     transform: rotate(45deg);
-
-//     box-shadow: none;
-//   }
-
-//   &::after {
-//     transform: rotate(-45deg);
-//   }
-
-//   &:hover::before,
-//   &:hover::after {
-//     background-color: $red;
-//   }
-
-//   &:active::before,
-//   &:active::after {
-//     background-color: rgba($red, .3);
-//   }
-// }
-
 .nav-main--opened .nav-main__toggle .cross path {
   display: block;
+
   fill: $green;
 }
 
@@ -240,84 +145,90 @@
 
 .nav-main--opened .nav-main__toggle:hover .cross path {
   display: block;
+
   fill: $red;
 }
 
 .nav-main--opened .nav-main__toggle:active .cross path {
   display: block;
+
   fill: rgba($red, .3);
 }
 //============== End Gabburger ==========//
 
 .nav-main__list {
-  max-width: 380px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  margin-right: 20px;
-
   @include tablet {
     display: block;
+
     max-width: 100%;
     margin-right: 0;
   }
 
+  display: flex;
+  flex-direction: row;
+
+  max-width: 380px;
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+
+  list-style: none;
+
+  flex-wrap: wrap;
 }
 
 .nav-main__item {
-  margin-right: 50px;
-
   @include desktop {
     margin-right: 30px;
   }
-
   @include tablet {
     display: block;
+
     margin-right: 0;
   }
-}
 
-.nav-main__item--active {
-
+  margin-right: 50px;
 }
 
 .nav-main__link {
   @include opensans(bold);
-  display: block;
-  text-decoration: none;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: $BLACK;
-  transition: color .3s;
-
-  &:hover {
-    color: $green;
-    cursor: pointer;
-  }
-
   @include tablet {
-    text-align: center;
     margin-bottom: 1px;
     padding: 14px 0 17px;
-    box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    text-align: center;
+
+    box-shadow: 0 1px 0 black, inset 0 1px 0 rgba(255, 255, 255, .15);
+
     font-size: 18px;
     line-height: 32px;
   }
+
+  display: block;
+
+  transition: color .3s;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: $BLACK;
+
+  font-size: 14px;
+
+  &:hover {
+    cursor: pointer;
+
+    color: $green;
+  }
 }
 
-//======= START GAMBURGER ======//
+//======= START BURGER ======//
 .nav-main--closed .nav-main__list {
   @include desktop {
     display: flex;
   }
-
   @include tablet {
     display: none;
   }
-
 }
 
 .nav-main--nojs .nav-main__toggle {
@@ -329,26 +240,26 @@
 }
 
 
-//======= END GAMBURGER ======//
+//======= END BURGER ======//
 .phone {
-  max-width: 180px;
-  margin-right: 40px;
-
   @include desktop {
     margin-right: 20px;
   }
+
+  max-width: 180px;
+  margin-right: 40px;
 }
 
 .header-main .phone {
   @include laptop {
-    margin-left: auto;
     margin-top: 20px;
+    margin-left: auto;
   }
-
   @include tablet {
     display: none;
-    margin: 0 auto;
+
     max-width: 220px;
+    margin: 0 auto;
   }
 }
 
@@ -357,45 +268,57 @@
 }
 
 .phone__link {
-  position: relative;
   @include opensans(bold);
+
+  position: relative;
+
   display: block;
-  text-decoration: none;
-  font-size: 15px;
-  text-transform: uppercase;
-  line-height: 20px;
+
   padding-left: 32px;
-  color: $BLACK;
-  letter-spacing: 3px;
+
   transition: color .3s;
+  text-decoration: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: $BLACK;
+
+  font-size: 15px;
+  line-height: 20px;
 
   &:hover {
     cursor: pointer;
+
     color: $green;
   }
 
   &:before {
-    content: " ";
     position: absolute;
     top: 0;
     left: 0;
+
     width: 19px;
     height: 19px;
-    background: #fafafa url('../../img/sprites/phone.png') 0 0 no-repeat;
+
+    content: " ";
     transition: all .3s;
+
+    background: #fafafa url("../../img/sprites/phone.png") 0 0 no-repeat;
   }
 
   &:hover:before {
-    background: #fafafa url('../../img/sprites/phone-hov.png') 0 0 no-repeat;
     transition: all .3s;
+
+    background: #fafafa url("../../img/sprites/phone-hov.png") 0 0 no-repeat;
   }
 }
 
 .header-main .phone__link {
   @include tablet {
-    padding-left: 32px;
     padding-top: 14px;
     padding-bottom: 17px;
+    padding-left: 32px;
+
     font-size: 18px;
     line-height: 32px;
 
@@ -403,12 +326,13 @@
       top: 21px;
     }
   }
-
 }
 
 .socials {
   display: flex;
+
   max-width: 80px;
+
   font-size: 0;
 }
 
@@ -416,37 +340,41 @@
   @include laptop {
     margin-right: 55px;
   }
-
   @include laptop {
-    margin-right: auto;
     margin-top: 20px;
+    margin-right: auto;
   }
-
   @include tablet {
-    margin: 0 auto;
     display: none;
+
+    margin: 0 auto;
   }
 }
 
 .social-link {
+  @include desktop {
+    margin-right: 10px;
+  }
+
   position: relative;
+
   display: block;
+
   width: 21px;
   height: 21px;
-  text-decoration: none;
   margin-right: 20px;
+
   transition: all .3s;
+  text-decoration: none;
+
   font-size: 0;
 
   &:before {
-    content: " ";
     position: absolute;
     top: 0;
     left: 0;
-  }
 
-  @include desktop {
-    margin-right: 10px;
+    content: " ";
   }
 }
 
@@ -455,14 +383,16 @@
   &:before {
     width: 11px;
     height: 21px;
-    background: #fafafa url('../../img/sprites/facebook.png') 0 0 no-repeat;
+
     transition: all .3s;
+
+    background: #fafafa url("../../img/sprites/facebook.png") 0 0 no-repeat;
   }
 
   &:hover:before {
-    background: #fafafa url('../../img/sprites/facebook-hov.png') 0 0 no-repeat;
     transition: all .3s;
 
+    background: #fafafa url("../../img/sprites/facebook-hov.png") 0 0 no-repeat;
   }
 }
 
@@ -471,17 +401,18 @@
   &:before {
     width: 21px;
     height: 21px;
-    background: #fafafa url('../../img/sprites/instagram.png') 0 0 no-repeat;
+
     transition: all .3s;
 
+    background: #fafafa url("../../img/sprites/instagram.png") 0 0 no-repeat;
   }
 
   &:hover:before {
-    background: #fafafa url('../../img/sprites/instagram-hov.png') 0 0 no-repeat;
     transition: all .3s;
+
+    background: #fafafa url("../../img/sprites/instagram-hov.png") 0 0 no-repeat;
   }
 }
-
 
 .slider {
   height: 537px;
@@ -494,9 +425,9 @@
 .slider__item h4 {
   margin: 0;
 }
+
 .slider__item--first {
-  background: #fafafa url('../../img/slider-1.jpg') 0 0 no-repeat;
-  //background-size: 100%;
+  background: #fafafa url("../../img/slider-1.jpg") 0 0 no-repeat;
 }
 
 .owl-buttons {
@@ -507,5 +438,6 @@
   position: absolute;
   bottom: 23px;
   left: 50%;
+
   transform: translateX(-50%);
 }

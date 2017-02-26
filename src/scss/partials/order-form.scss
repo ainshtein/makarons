@@ -3,50 +3,53 @@
 }
 
 .order-form__wrapper {
-  max-width: 810px;
-  padding: 37px 0 26px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-
   @include laptop {
     width: 750px;
   }
-
   @include tablet {
     width: 480px;
     margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
-
   @include phone {
     width: 320px;
     margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
+  display: flex;
+  flex-direction: column;
+
+  max-width: 810px;
+  margin: 0 auto;
+  padding: 37px 0 26px;
 }
 
 .order-form__item-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 26px;
-
   @include phone {
     flex-direction: column;
+
     align-items: center;
   }
+
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 26px;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .order-form__item {
-  position: relative;
-
   @include phone {
-    margin-bottom: 30px;
     width: 100%;
+    margin-bottom: 30px;
   }
+
+  position: relative;
 
   &:last-child {
     @include tablet {
@@ -57,21 +60,26 @@
       margin-top: 0;
     }
   }
-
 }
 
 .order-form__input {
   @include color;
   @include opensans;
+  @include phone {
+    width: 100%;
+  }
+
   width: 225px;
   height: 47px;
   padding: 12px 50px 15px 30px;
-  outline: none;
-  border-radius: 23px;
-  box-shadow: 1.5px 2.6px 4.7px 0.3px rgba(0, 0, 0, 0.24);
+
   cursor: pointer;
-  border: 2px solid $WHITE;
   transition: all .3s;
+
+  border: 2px solid $WHITE;
+  border-radius: 23px;
+  outline: none;
+  box-shadow: 1.5px 2.6px 4.7px .3px rgba(0, 0, 0, .24);
 
   &:hover {
     border-color: $BLACK;
@@ -84,33 +92,32 @@
   &:focus {
     border-color: $red;
   }
-
-  @include phone {
-    width: 100%;
-  }
 }
 
 .order-form__img {
-  display: block;
   position: absolute;
   top: 5px;
   right: 5px;
+
+  display: block;
+
   width: 39px;
   height: 39px;
+
   border-radius: 50%;
   background-color: $green;
 }
 
 .order-form__img--name {
-  background: $green url('../../img/sprites/icons_user.png') 50% 50% no-repeat;
+  background: $green url("../../img/sprites/icons_user.png") 50% 50% no-repeat;
 }
 
 .order-form__img--phone {
-  background: $green url('../../img/sprites/phone-white.png') 50% 50% no-repeat;
+  background: $green url("../../img/sprites/phone-white.png") 50% 50% no-repeat;
 }
 
 .order-form__img--email {
-  background: $green url('../../img/sprites/icons_email.png') 50% 50% no-repeat;
+  background: $green url("../../img/sprites/icons_email.png") 50% 50% no-repeat;
 }
 
 .order-form__btn-wrapper {

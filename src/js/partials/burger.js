@@ -1,4 +1,4 @@
-// -------- GAMBURGER ------- //
+// -------- BURGER ------- //
 ;$(document).ready(function() {
 var navMain = document.querySelector(".nav-main");
 var navToggle = document.querySelector(".nav-main__toggle");

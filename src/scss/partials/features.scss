@@ -1,43 +1,87 @@
 .features {
-  background: $WHITE url('../../img/bg-features.jpg') 50% 0 no-repeat;
+  @include desktop {
+    background: url("../../img/bg-features.png") 50% 66% no-repeat,
+    url("../../img/bg-features2.png") -20% 231% no-repeat;
+  }
+  @include laptop {
+    background: url("../../img/bg-features.png") 50% 66% no-repeat,
+    url("../../img/bg-features2.png") -60% 200% no-repeat;
+  }
+  @include tablet {
+    background: url("../../img/bg-features.png") 91% 36% no-repeat,
+    url("../../img/bg-features2.png") 50% 150% no-repeat;
+  }
+  @include phone {
+    background: url("../../img/bg-features.png") 100% 93% no-repeat,
+    url("../../img/bg-features2.png") 50% 164% no-repeat;
+  }
+
+  background: url("../../img/bg-features.png") 50% 66% no-repeat,
+  url("../../img/bg-features2.png") 0 231% no-repeat;
+  background-color: $WHITE;
 }
 
 .features__wrapper {
-  width: 810px;
+  @include laptop {
+    width: 750px;
+    padding: 33px 0;
+  }
+  @include tablet {
+    width: 480px;
+    padding-bottom: 150px;
+  }
+  @include phone {
+    width: 320px;
+  }
+
+  max-width: 810px;
   margin: 0 auto;
   padding: 43px 0;
 }
 
 .features__title {
   @include opensans(bold);
-  font-size: 22px;
-  text-transform: uppercase;
+  @include laptop {
+    margin-bottom: rem(40px);
+  }
+
+  margin-bottom: rem(50px);
+
   text-align: center;
-  margin-bottom: 50px;
+  text-transform: uppercase;
+
+  font-size: rem(22px);
 }
 
 .features__row {
   display: flex;
   flex-direction: row;
+
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .features__item {
   position: relative;
+
   width: 320px;
-  text-align: left;
   padding: 15px 0 0 70px;
+
+  text-align: left;
 }
 
 .strip:before {
-  content: " ";
   position: absolute;
   top: 0;
   right: 0;
+
   display: block;
+
   width: 238px;
   height: 2px;
+
+  content: " ";
+
   background-color: $green;
 }
 
@@ -45,24 +89,32 @@
   position: absolute;
   top: 15px;
   left: 7px;
+
   display: block;
+
   width: 40px;
   height: 40px;
+
+  text-align: center;
+
   border: 2px solid $green;
   border-radius: 50%;
-  text-align: center;
+
   line-height: 35px;
 }
 
 .features__item-title {
   @include opensans(bold);
-  font-size: 14px;
-  line-height: 14px;
+
   text-transform: uppercase;
+
+  font-size: rem(14px);
+  line-height: rem(14px);
 }
 
 .features__text {
   @include opensans;
-  font-size: 16px;
-  line-height: 20px;
+
+  font-size: rem(16px);
+  line-height: rem(20px);
 }

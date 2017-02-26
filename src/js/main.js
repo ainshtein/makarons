@@ -11,7 +11,7 @@
  */
 
 //=include partials/slider.js
-//=include partials/gamburger.js
+//=include partials/burger.js
 
 
 

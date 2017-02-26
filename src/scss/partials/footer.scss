@@ -1,4 +1,17 @@
 .footer-main {
+  @include laptop {
+    height: 222px;
+    margin-top: -222px;
+  }
+  @include tablet {
+    height: 296px;
+    margin-top: -296px;
+  }
+  @include phone {
+    height: 267px;
+    margin-top: -267px;
+  }
+
   position: relative;
 
   overflow: hidden;
@@ -8,37 +21,50 @@
   margin-top: -182px;
 
   background-color: $green;
-
-  @include laptop {
-    height: 222px;
-    margin-top: -222px;
-  }
 }
 
 .footer-main__wrapper {
+  @include desktop {
+    width: 970px;
+  }
+  @include laptop {
+    width: 750px;
+  }
+  @include tablet {
+    flex-direction: column;
+
+    width: 480px;
+  }
+  @include phone {
+    width: 280px;
+  }
+
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
+
   max-width: 1035px;
   margin: 0 auto;
   padding: 28px 15px 24px;
 
-  @include desktop {
-    width: 970px;
-  }
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-  @include laptop {
-    width: 750px;
-  }
-
+.footer-main .logo {
   @include tablet {
-    width: 480px;
+    margin-bottom: 15px;
   }
+}
 
+.footer-main .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-main .logo {
   @include phone {
-    width: 280px;
+    width: 50%;
   }
 }
 
@@ -54,7 +80,7 @@
   display: flex;
   flex-direction: row;
 
-  width: 380px;
+  max-width: 380px;
   margin: 0;
   margin-right: 8px;
   padding: 0;
@@ -64,7 +90,11 @@
   flex-wrap: wrap;
 }
 
-.nav-footer__item {
+.footer-main .nav-footer__item {
+  @include phone {
+    margin-right: 20px;
+  }
+
   margin-right: 50px;
 }
 
@@ -79,7 +109,7 @@
 
   color: $WHITE;
 
-  font-size: 14px;
+  font-size: rem(14px);
 
   &:hover {
     cursor: pointer;
@@ -90,8 +120,11 @@
 
 .footer-main .phone {
   @include laptop {
-    margin-left: auto;
     margin-top: 20px;
+    margin-left: auto;
+  }
+  @include tablet {
+    margin-left: 0;
   }
 }
 
@@ -143,8 +176,11 @@
 
 .footer-main .socials {
   @include laptop {
-    margin-right: auto;
     margin-top: 20px;
+    margin-right: auto;
+  }
+  @include tablet {
+    margin-right: 0;
   }
 }
 
